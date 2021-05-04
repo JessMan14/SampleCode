@@ -1,0 +1,692 @@
+<div class="bg-primary-10">
+  <vpt-header>
+    <vpt-header-header [headerStartContent]="headerStartContent"></vpt-header-header>
+    <vpt-header-body [headerBodyContent]="headerBodyContent" class="w-full"></vpt-header-body>
+    <vpt-header-footer [headerEndContent]="headerEndContent"></vpt-header-footer>
+  </vpt-header>
+  <div class="flex flex-row">
+    <div class="bg-primary-10">
+      <div class="col-span-2 flex flex-row bg-select">
+        <vpt-sidebar width="16">
+          <div>
+            <ng-container *ngFor="let sideItem of menuData">
+              <div [id]=sideItem.menuId>
+                <a (click)="setParent(sideItem)" class="w-full h-full">
+                  <vpt-sidebar-item height="16" [type]="sideItem.menuIcon.substring(0,3)" [iconName]='sideItem.menuIcon.substring(4, sideItem.menuIcon.length)' [backgroundColor]="sideItem.backgroundColor" [iconColor]="sideItem.iconColor" ></vpt-sidebar-item>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+          <vpt-sidebar-footer>
+            <vpt-sidebar-item type='fas' iconName='pencil-alt' backgroundColor="primary-100" iconColor="primary-20"></vpt-sidebar-item>
+            <div class='rounded-full bg-green ml-8 -mb-4 w-2 mt-2 h-2'></div>
+            <vpt-sidebar-item type='fas' iconName='user-circle' backgroundColor="primary-100" iconColor="primary-20"></vpt-sidebar-item>
+          </vpt-sidebar-footer>
+
+        </vpt-sidebar>
+        <div class="">
+          <!-- <vpt-secondary-menu [parentId]="parentSelected" [isShowMenuPanel]="toggleSideMenu"
+            [menuHeadersCache]="menuHeadersCache" [childMenuDataCache]="childMenuDataCache"
+            (toggleMenubar)="toggleSideMenu = false">
+          </vpt-secondary-menu> -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="m-10 ml-20 flex flex-row w-full rounded overflow-hidden">
+      <div class="border-r border-border-100">
+    
+        <!--Action Panel Tab-->
+        <vpt-tab-group>
+          <vpt-tab-item tabTitle="Action">
+    
+          <!--Action Panel Accordion-->
+          <vpt-accordion [properties]="{style: 'border-right: 0; border-top: 0'}">
+    
+            <!--Action - Programs-->
+            <vpt-accordion-panel [last]=false title="Programs">
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='ConEd-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='ConEd-SMB' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--accent-2-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='PSE-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='LADWP-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='SDG&E-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+              <vpt-event>
+                <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                  backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                <vpt-event-text mainText='SDG&E-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+              </vpt-event>
+            </vpt-accordion-panel>
+    
+            <!--Action - Features-->
+              <vpt-accordion-panel title="Segment">
+                <div *ngFor="let segment of segments" class="flex flex-row px-4 py-2">
+                  <vpt-willdan-checkbox [properties]="{style: 'border-color: var(--border-100);color: var(--secondary-100);'}"></vpt-willdan-checkbox>
+                  <label class="pl-2 text-primary-100">{{segment}}</label>
+                </div>
+              </vpt-accordion-panel>
+
+            <!--Action - Feature-->
+            <vpt-accordion-panel title="KPI Selector">
+              <div *ngFor="let kpiSelect of kpiSelectors" class="flex flex-row px-4 py-2">
+                <vpt-willdan-checkbox [properties]="{style: 'border-color: var(--border-100);color: var(--secondary-100);'}"></vpt-willdan-checkbox>
+                <label class="pl-2 text-primary-100">{{kpiSelect}}</label>
+              </div>
+            </vpt-accordion-panel>
+
+            <!--Action - Features-->
+            <vpt-accordion-panel title="Region">
+              <div *ngFor="let region of regions" class="flex flex-row px-4 py-2">
+                <vpt-willdan-checkbox [properties]="{style: 'border-color: var(--border-100);color: var(--secondary-100);'}"></vpt-willdan-checkbox>
+                <label class="pl-2 text-primary-100">{{region}}</label>
+              </div>
+            </vpt-accordion-panel>                           
+
+            <!--Action - Features-->
+            <vpt-accordion-panel title="Utility">
+              <div *ngFor="let utility of utilities" class="flex flex-row px-4 py-2">
+                <vpt-willdan-checkbox [properties]="{style: 'border-color: var(--border-100);color: var(--secondary-100);'}"></vpt-willdan-checkbox>
+                <label class="pl-2 text-primary-100">{{utility}}</label>
+              </div>
+            </vpt-accordion-panel>              
+
+            <!--Action - Features-->
+            <vpt-accordion-panel title="Time Period">
+              <div *ngFor="let timePeriod of timePeriods" class="flex flex-row px-4 py-2">
+                <vpt-willdan-checkbox [properties]="{style: 'border-color: var(--border-100);color: var(--secondary-100);'}"></vpt-willdan-checkbox>
+                <label class="pl-2 text-primary-100">{{timePeriod}}</label>
+              </div>
+            </vpt-accordion-panel>             
+    
+          </vpt-accordion>
+    
+          </vpt-tab-item>
+          <vpt-tab-item tabTitle="Notes">
+    
+            <!--Notes Panel Accordion-->
+            <vpt-accordion>
+    
+              <!--Action - Notes-->
+              <vpt-accordion-panel [last]=false title="Notes">
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='ConEd-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='ConEd-SMB' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--secondary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='Potomac-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-2-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='PSE-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='SDG&E-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='SDG&E-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+              </vpt-accordion-panel>
+    
+            </vpt-accordion>
+    
+          </vpt-tab-item>
+          <vpt-tab-item tabTitle="Procedures">
+    
+            <!--Overview Panel Accordion-->
+            <vpt-accordion>
+    
+              <!--Action - Overview-->
+              <vpt-accordion-panel [last]=false title="Notes">
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='ConEd-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--tertiary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='ConEd-SMB' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--secondary-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='Potomac-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-2-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='PSE-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='SDG&E-MF' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='project-diagram' iconColor='var(--accent-6-4)'
+                    backgroundColor='var(--accent-3-100)'></vpt-badge-icon>
+                  <vpt-event-text mainText='SDG&E-SBDI' subText='10/23/2020 12:00 AM EST'></vpt-event-text>
+                </vpt-event>
+              </vpt-accordion-panel>
+    
+            </vpt-accordion>
+    
+          </vpt-tab-item>
+        </vpt-tab-group>
+    
+      </div>
+
+      <div class="w-full">
+        <!-- Stats Charts -->
+        <div class="grid grid-cols-4">
+            <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+              <vpt-panel>
+                <vpt-panel-header>
+                  <vpt-event>
+                    <vpt-event-text mainText='Materials' class="font-bold"></vpt-event-text>
+                  </vpt-event>
+                  <div class="pt-6 pr-5">
+                    <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                    </fa-icon>
+                  </div>
+                </vpt-panel-header>
+                <vpt-panel-body>
+                  <div class="pt-5">
+                    <div class="ml-5 text-gray-60 font-Heebo">
+                      <p style="float: left; width: 70%; text-align: left;">This month</p>
+                      <p style="float: left; width: 20%; text-align: right;">6,123</p>
+                    </div>
+                    <div class="ml-5 font-Heebo">
+                      <p class="text-gray-60" style="float: left; width: 70%; text-align: left;">Total</p>
+                      <p style="float: left; width: 20%; text-align: right;">513,143</p>
+                    </div>
+                  </div>
+                <div class="p-2">
+                  <app-bar-chart [divId]=barChartDivId1 [data]=barChartConfig1 [height]="130"></app-bar-chart>
+                </div>
+                </vpt-panel-body>
+              </vpt-panel>
+            </div>
+        
+            <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+              <vpt-panel>
+                <vpt-panel-header>
+                  <vpt-event>
+                    <vpt-event-text mainText='Earnings' class="font-bold"></vpt-event-text>
+                  </vpt-event>
+                  <div class="pt-6 pr-5">
+                    <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                    </fa-icon>
+                  </div>
+                </vpt-panel-header>
+                <vpt-panel-body>
+                  <div class="pt-5">
+                    <div class="ml-5 text-gray-60 font-Heebo">
+                      <p style="float: left; width: 70%; text-align: left;">This month</p>
+                      <p style="float: left; width: 20%; text-align: right;">$21,713</p>
+                    </div>
+                    <div class="ml-5 font-Heebo">
+                      <p class="text-gray-60" style="float: left; width: 70%; text-align: left;">Total</p>
+                      <p style="float: left; width: 20%; text-align: right;">$121,713</p>
+                    </div>
+                  </div>
+
+                  <div class="p-2">
+                      <app-line-chart [data]=lineConfig1 [divId]=lineDiv1> </app-line-chart>
+                  </div>
+                </vpt-panel-body>
+              </vpt-panel>
+            </div>
+        
+            <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+              <vpt-panel>
+                <vpt-panel-header>
+                  <vpt-event>
+                    <vpt-event-text mainText='kWh Savings' class="font-bold"></vpt-event-text>
+                  </vpt-event>
+                  <div class="pt-6 pr-5">
+                    <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                    </fa-icon>
+                  </div>
+                </vpt-panel-header>
+                <vpt-panel-body>
+                  <div class="pt-5">
+                    <div class="ml-5 text-gray-60 font-Heebo">
+                      <p style="float: left; width: 70%; text-align: left;">This month</p>
+                      <p style="float: left; width: 20%; text-align: right;">$41</p>
+                    </div>
+                    <div class="ml-5 font-Heebo">
+                      <p class="text-gray-60" style="float: left; width: 70%; text-align: left;">Total</p>
+                      <p style="float: left; width: 20%; text-align: right;">$154</p>
+                    </div>
+                  </div>
+
+                  <div class="mt-20">
+
+                  </div>
+
+                  <div class="pt-5 ml-5 my-5">
+                    <div class='text-base font-Heebo'>Progress</div>
+                    <div class='flex flex-row'>
+                      <div class='pt-2 h-5 w-72'>
+                        <vpt-progress-bar [progress]="20" color="secondary-100"></vpt-progress-bar>
+                      </div>
+                      <div class='pr-8 text-base ml-3 font-Heebo'>20%</div>
+                    </div>
+                  </div>    
+                </vpt-panel-body>
+              </vpt-panel>
+            </div>
+        
+            <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+                <vpt-panel>
+                  <vpt-panel-header>
+                    <vpt-event>
+                      <vpt-event-text mainText='Unbilled Revenue' class="font-bold"></vpt-event-text>
+                    </vpt-event>
+                    <div class="pt-6 pr-5">
+                      <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                      </fa-icon>
+                    </div>
+                  </vpt-panel-header>
+                  <vpt-panel-body>
+                    <div class="pt-5">
+                      <div class="ml-5 text-gray-60 font-Heebo">
+                        <p style="float: left; width: 70%; text-align: left;">This month</p>
+                        <p style="float: left; width: 20%; text-align: right;">$41</p>
+                      </div>
+                      <div class="ml-5 font-Heebo">
+                        <p class="text-gray-60" style="float: left; width: 70%; text-align: left;">Total</p>
+                        <p style="float: left; width: 20%; text-align: right;">$154</p>
+                      </div>
+                    </div>
+
+                    <div class="p-2">
+                      <app-line-chart [data]=lineConfig2 [divId]=lineDiv2> </app-line-chart>
+                    </div>
+                  </vpt-panel-body>
+                </vpt-panel>
+              </div>
+        </div>
+
+        <!-- Program Chart -->
+        <div class="mt-1 ml-1 border border-border-100 rounded overflow-hidden">
+          <vpt-panel>
+            <vpt-panel-header>
+              <vpt-event>
+                <vpt-event-text mainText='Program Activity' class="font-bold"></vpt-event-text>
+              </vpt-event>
+              <div class="pt-6 pr-5">
+                <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                </fa-icon>
+              </div>
+            </vpt-panel-header>
+            <vpt-panel-body>
+              <div class="p-5">
+                  <app-area-json [divId]=areaChartDivId [data]=areaChartConfig [height]=400></app-area-json>
+                </div>    
+            </vpt-panel-body>
+          </vpt-panel>
+        </div>
+        <!-- Radius Charts -->
+        <div class="grid grid-cols-4 mt-1">
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Revenue' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+      
+                <div class="p-2">
+                  <app-radius-chart [divId]=radarDivId1 [data]=radarConfig1></app-radius-chart>
+                </div>
+      
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+      
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Sales' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+      
+                <div class="p-2">
+                  <app-radius-chart [divId]=radarDivId2 [data]=radarConfig2></app-radius-chart>
+                </div>
+      
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+                 
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Traffic sources' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+      
+                <div class="p-2">
+                  <pie-chart [divId]=pieDiv1 [data]=pieChartConfig1></pie-chart>
+                </div>
+      
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Balance' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+      
+                <div class="p-2">
+                  <pie-chart [divId]=pieDiv2 [data]=pieChartConfig2></pie-chart>
+                </div>
+      
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>  
+        </div>
+      
+        <!-- Reporting Table -->
+        <div class="mt-1 ml-1 border border-border-100 rounded overflow-hidden">
+          <vpt-panel>
+            <vpt-panel-header>
+              <vpt-event>
+                <vpt-event-text mainText='Internal Reports' class="font-bold"></vpt-event-text>
+              </vpt-event>
+              <div class="pt-6 pr-5">
+                <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                </fa-icon>
+              </div>
+            </vpt-panel-header>
+            <vpt-panel-body>
+              <div class="w-full h-full flex flex-col">
+                <vpt-willdan-table 
+                  [data]=CUSTOMER_DATA [columns]=displayedColumns [itemsPerPage]=4 [frameworkComponent]="frameworkComponents" [rowHeight]="60" [elipsesData]="elipsesData">
+                </vpt-willdan-table>
+              </div>    
+            </vpt-panel-body>
+          </vpt-panel>
+        </div> 
+
+        <!-- Gauges -->
+        <div class="grid grid-cols-3 mt-1">
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Gauges' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-gauge-chart [divId]=gaugeDivId1 [data]=gaugeChartConfig1></app-gauge-chart>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Gauges with bands' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-gauge-chart [divId]=gaugeDivId2 [data]=gaugeChartConfig2></app-gauge-chart>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div> 
+
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='Audit/Work' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="pt-5 ml-5 my-5">
+                  <p>
+                    <span class="text-lg text-primary-100 font-bold font-Heebo">2,324 </span>
+                    <span class="text-primary-100 font-Heebo">Audits performed</span>
+                  </p>
+                  <div class='flex flex-row'>
+                    <div class='pt-2 h-5 w-80'>
+                      <vpt-progress-bar [progress]="70" color="purple"></vpt-progress-bar>
+                    </div>
+                    <div class='text-base ml-3 font-Heebo'>70%</div>
+                  </div>
+                </div> 
+                <div class="pt-5 ml-5 my-5">
+                  <p>
+                    <span class="text-lg text-primary-100 font-bold font-Heebo">124 </span>
+                    <span class="text-primary-100 font-Heebo">Additional work sold</span>
+                  </p>
+                  <div class='flex flex-row'>
+                    <div class='pt-2 h-5 w-80'>
+                      <vpt-progress-bar [progress]="20" color="secondary-100"></vpt-progress-bar>
+                    </div>
+                    <div class='text-base ml-3 font-Heebo'>20%</div>
+                  </div>
+                </div> 
+                <div class="pt-5 ml-5 my-5">
+                  <p>
+                    <span class="text-lg text-primary-100 font-bold font-Heebo">124 </span>
+                    <span class="text-primary-100 font-Heebo">Audits sold</span>
+                  </p>
+                  <div class='flex flex-row'>
+                    <div class='pt-2 h-5 w-80'>
+                      <vpt-progress-bar [progress]="50" color="tertiary-100"></vpt-progress-bar>
+                    </div>
+                    <div class='text-base ml-3 font-Heebo'>50%</div>
+                  </div>
+                </div>  
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+        </div>
+        <!-- Maps -->
+        <div class="grid grid-cols-2 mt-1">
+          <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='US Active Programs' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-map-chart [divId]=heatMapDivId [data]=heatMapConfig></app-map-chart>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+          <div class="col-span-1 ml-1 h-72 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='US Active Programs (animated)' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-map-chart [divId]=locationMapDivId [data]=locationMapConfig></app-map-chart>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+        </div>
+        <!-- Stats Chart -->
+        <div class="mt-1 ml-1 border border-border-100 rounded overflow-hidden">
+          <vpt-panel>
+            <vpt-panel-header>
+              <vpt-event>
+                <vpt-event-text mainText='Stats' class="font-bold"></vpt-event-text>
+              </vpt-event>
+              <div class="pt-6 pr-5">
+                <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                </fa-icon>
+              </div>
+            </vpt-panel-header>
+            <vpt-panel-body>
+              <div class="w-full h-full flex flex-col">
+                <app-bar-chart [divId]=barChartDivId2 [data]=barChartConfig2 [height]="300"></app-bar-chart>
+              </div>    
+            </vpt-panel-body>
+          </vpt-panel>
+        </div>
+        
+        <!-- Pipeline -->
+        <div class="grid grid-cols-3 mt-1">
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='SDG&E Small Commerical 2021 kWh Pipeline' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-area-json [divId]=kWhPipelineDivId [data]=kWhChartConfig [height]=300></app-area-json>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='SDG&E Small Commerical 2021 kW Pipeline' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-area-json [divId]=kWPipelineDivId [data]=kWChartConfig [height]=300></app-area-json>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>
+          <div class="col-span-1 ml-1 h-96 border border-border-100 rounded overflow-hidden">
+            <vpt-panel>
+              <vpt-panel-header>
+                <vpt-event>
+                  <vpt-event-text mainText='SDG&E Small Commerical 2021 therm Pipeline' class="font-bold"></vpt-event-text>
+                </vpt-event>
+                <div class="pt-6 pr-5">
+                  <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+                  </fa-icon>
+                </div>
+              </vpt-panel-header>
+              <vpt-panel-body>
+                <div class="w-full h-full flex flex-col">
+                  <app-area-json [divId]=thermPipelineDivId [data]=thermChartConfig [height]=300></app-area-json>
+                </div>    
+              </vpt-panel-body>
+            </vpt-panel>
+          </div>          
+        </div>        
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  
+
+
+

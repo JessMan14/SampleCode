@@ -1,0 +1,798 @@
+<body>
+  <!--ViewPoint-Beta -->
+  <div class="sm:p-1 md:p-2 lg:p-4 xl:p-6 2xl:p-8 2xl:p-10">
+  <h1 class='text-primary-100 font-semibold text-5xl text-center'>ViewPoint-Beta</h1>
+
+  <!--Re-direct Buttons-->
+  <!--<div class="">
+    <div class="max-w-screen-xl mx-auto py-12 px-4 text-center sm:px-6 md:px-8 lg:py-24">
+      <div class="space-y-12">
+        <ul class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-8xl">
+          <li>
+            <div class="space-y-6">
+              <p class="text-tertiary-100">Click below to get an early preview</p>
+              <button class="bg-white rounded">
+              <img class="rounded border border-tertiary-20 hover:border-secondary-100"  src="/assets/img/assessment.png" alt=""></button>
+              <div class="space-y-2">
+                <div class="text-lg leading-6 font-medium space-y-1">
+                  <h4 class="text-primary-100 text-2xl">ViewPoint-Assessment Tool</h4>
+                  <p class="text-primary-60 mt-5">ViewPoint's mobile auditing tool</p>                  
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="space-y-6">
+              <p class="text-tertiary-100">Click below to get an early preview</p>
+              <button class="bg-white rounded">
+              <img class="rounded border border-tertiary-20 hover:border-secondary-100"  src="/assets/img/willdanl.png" alt=""></button>
+              <div class="space-y-2">
+                <div class="text-lg leading-6 font-medium space-y-1">
+                  <h4 class="text-primary-100 text-2xl">ViewPoint-Willdan</h4>
+                  <p class="text-primary-60 mt-5">ViewPoint's program operations view</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="space-y-6">
+              <p class="text-tertiary-100">Coming Soon!</p>
+              <button class="bg-white rounded">
+              <img class="rounded border border-tertiary-20"  src="/assets/img/contractor.png" alt=""></button>
+              <div class="space-y-2">
+                <div class="text-lg leading-6 font-medium space-y-1">
+                  <h4 class="text-primary-100 text-2xl">ViewPoint-Contractor</h4>
+                  <p class="text-primary-60 mt-5">ViewPoint's contractor view</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>-->
+
+  <!--Form Stepper Component-->
+  <div class="mt-10 sm:mx-1 md:mx-2 lg:mx-2 xl:mx-6 2xl:mx-10 3xl:mx-14">
+    <vpt-stepper-container>
+      <vpt-stepper-item progress="false" class="w-1/4" backgroundColor="bg-tertiary-100" iconColor="bg-secondary-100"
+        iconName="file-spreadsheet" type="fad" itemTitle="Requirements">
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="money-check" type="fas" itemTitle="UI/UX">
+        <vpt-stepper-bar progressBaseColor="bg-tertiary-20" progressColor="bg-secondary-100" progressValue="100">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="laptop-code" type="fad" itemTitle="Development">
+        <vpt-stepper-bar progressBaseColor="bg-justin-gray" progressColor="bg-secondary-100" progressValue="100">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="clipboard-list-check" type="fad" itemTitle="Testing">
+        <vpt-stepper-bar progressBaseColor="bg-tertiary-20" progressColor="bg-secondary-100" progressValue="100">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="user-check" type="fad" itemTitle="User Testing">
+        <vpt-stepper-bar progressBaseColor="bg-tertiary-20" progressColor="bg-secondary-100" progressValue="50">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="users-class" type="fad" itemTitle="User Training">
+        <vpt-stepper-bar progressBaseColor="bg-tertiary-20" progressColor="bg-tertiary-100" progressValue="0">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+      <vpt-stepper-item class="w-1/4" progress="true" backgroundColor="bg-tertiary-100" iconColor="bg-tertiary-100"
+        iconName="thumbs-up" type="fad" itemTitle="Go Live!">
+        <vpt-stepper-bar progressBaseColor="bg-tertiary-20" progressColor="bg-tertiary-100" progressValue="0">
+        </vpt-stepper-bar>
+      </vpt-stepper-item>
+    </vpt-stepper-container>
+  </div>
+
+
+<!-- LADWP Panel -->
+  <div class="mt-5 sm:mx-1 md:mx-2 lg:mx-2 xl:mx-8 2xl:mx-12 3xl:mx-16">
+  <div class="flex flex-row w-full h-full min-h-screen bg-white border border-border-100 rounded overflow-hidden">
+        <vpt-tab-group class="border-r border-border-100">
+          <vpt-tab-item tabTitle="Actions">
+            <vpt-accordion [properties]="{style: 'border-right: 0; border-top: 0'}">
+              <vpt-accordion-panel title="Stages">
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Steps"></vpt-accordion-panel>
+              <vpt-accordion-panel title="Documents">
+                <div class="text-right pt-4 pb-2">
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2 text-black font-medium">
+                  <div>File Name</div>
+                  <div>Date Added</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/Viewpoint-Beta Log In Issue.pdf')">ViewPoint-Beta login issues</div>
+                  <div>11/22/2020</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2 mb-3">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/ViewPoint-Glossary.pdf')">ViewPoint-Glossary</div>
+                  <div>11/22/2020</div>
+                </div>
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Training Materials">
+                <div class="text-right pt-4 pb-2">
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2 text-black font-medium">
+                  <div>File Name</div>
+                  <div>Date Added</div>
+                </div>
+                <!--<div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/User Roles and Permissions.pdf')">The ViewPoint Table</div>
+                  <div>11/9/2020</div>
+                </div>-->
+                <div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/User Roles and Permissions.pdf')">User Roles and Permissions</div>
+                  <div>11/9/2020</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/Customer Search.pdf')">Customer Search</div>
+                  <div>11/10/2020</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2 mb-3">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/docs/Lead Assessments.pdf')">Lead Assessments</div>
+                  <div>11/10/2020</div>
+                </div>
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Gallery">
+                <div class="text-right pt-4">
+                  <fa-icon [icon]="['fas', 'minus-circle']" class="text-accent-6-2 w-full px-1"></fa-icon>
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="grid grid-cols-3 px-8 pb-4 justify-center">
+                  <img *ngFor="let item of documentItems" (click)="onClickImageDisplay(item)" [src]=item alt="image"
+                    class="col-span-1 h-20 w-20 rounded pt-2 cursor-pointer">
+                </div>
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Videos">
+                <div class="text-right pt-4">
+                  <fa-icon [icon]="['fas', 'minus-circle']" class="text-accent-6-2 w-full px-1"></fa-icon>
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="grid grid-cols-3 px-8 pb-4 justify-center">
+                  <img *ngFor="let item of videoItems" (click)="onClickPlayVideo(item.source)" [src]=item.image alt="video"
+                    class="col-span-1 h-20 w-20 rounded pt-2 cursor-pointer">
+                </div>
+              </vpt-accordion-panel>
+            </vpt-accordion>
+          </vpt-tab-item>
+          <vpt-tab-item tabTitle="Notes">
+            <vpt-accordion [properties]="{style: 'border-right: 0; border-top: 0'}">
+              <vpt-accordion-panel title="Note Log">
+                <div *ngFor="let note of notes" class="m-6">
+                  <div class="flex flex-row py-4">
+                    <div class="text-tertiary-100 px-1 text-sm">{{note.name}}</div>
+                    <div class="px-1 text-sm">| {{note.date}} |</div>
+                    <div class="px-1 text-sm">{{note.phase}}</div>
+                  </div>
+                  <div class="sm:text-xs md:text-sm lg:text-base">{{note.note}}</div>
+                </div>
+              </vpt-accordion-panel>
+            </vpt-accordion>
+          </vpt-tab-item>
+          <vpt-tab-item tabTitle="Procedures">
+            <vpt-accordion [properties]="{style: 'border-right: 0; border-top: 0'}">
+
+              <div class="mx-6 mt-3">
+                <div class="flex flex-row pt-2 pb-2 items-center">
+                  <vpt-badge-icon iconType="fad" iconName="chalkboard-teacher" iconColor="var(--tertiary-100)"></vpt-badge-icon>
+                  <div class="px-1 text-tertiary-100 text-xl font-medium">Procedures </div>
+                </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-xs md:text-sm lg:text-base">This section is intended to outline the procedures used for what you see on this screen. This will help guide the user on how this page is intended to be used. This is particularly useful for things like the Revenue report where we want to spell out the logic used to calculate each revenue stream, and provide a quick reference to where we can find documentation and approvals when needed (in case of SOX controls and logs).</div>
+                </div>
+              </div>
+
+              <div class="mx-6 mt-2">
+                <div class="flex flex-row pt-4 pb-2 text-tertiary-100">
+                  <div class="px-1 sm:text-base md:text-lg lg:text-xl font-medium">Example procedure:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">Revenue eligibility in FY 2020 starts with a “completed” stage where the contractor has certified that the installation has been completed. The revenue streams collected for this program and their calculations are as follows:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6 mt-1">
+                <div class="flex flex-row pt-2 pb-2 items-center">
+                  <span class="h-2 w-2 bg-secondary-100 rounded-full"></span>
+                  <div class="px-1 sm:text-base md:text-base lg:text-lg font-medium text-accent-5-100">Incentive:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">Measure level incentives are aggregated at the work order level per the approved program incentive list effective at the date of audit/sale</div> 
+                 </div>
+              </div>
+
+              <div class="mx-6 mt-1">
+                <div class="flex flex-row pt-2 pb-2 items-center">
+                  <span class="h-2 w-2 bg-secondary-100 rounded-full"></span>
+                  <div class="px-1 sm:text-base md:text-base lg:text-lg font-medium text-accent-5-100">Customer Copay:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">0.33 times the total incentive for that work order</div> 
+                 </div>
+              </div>
+
+              <div class="mx-6 mt-1">
+                <div class="flex flex-row pt-2 pb-2 items-center">
+                  <span class="h-2 w-2 bg-secondary-100 rounded-full"></span>
+                  <div class="px-1 sm:text-base md:text-base lg:text-lg font-medium text-accent-5-100">Performance Fee:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">Measure level savings are aggregated at the work order level and multiplied by the agreed performance rate of $0.20/kWh per client contract.</div> 
+                 </div>
+              </div>
+
+              <div class="mx-6 mt-1">
+                <div class="flex flex-row pt-2 pb-2 items-center">
+                  <span class="h-2 w-2 bg-secondary-100 rounded-full"></span>
+                  <div class="px-1 sm:text-base md:text-base lg:text-lg font-medium text-accent-5-100">Adjustments:</div>
+                 </div>
+              </div>
+
+              <div class="mx-6">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">As work orders continue to be updated until after post-inspection, each new revenue report will reconcile these changes and update accordingly.</div> 
+                 </div>
+              </div>
+
+              <div class="mx-6 mt-6 mb-5">
+                <div class="flex flex-row">
+                  <div class="px-1 sm:text-sm md:text-sm lg:text-base">You can find a link to the full documentation of this report <a href="" class="text-tertiary-100 font-medium">here</a></div> 
+                 </div>
+              </div>
+
+            </vpt-accordion>
+          </vpt-tab-item>
+        </vpt-tab-group>
+        <div class="w-full">
+          <vpt-panel>
+            <vpt-panel-header>
+              <div class="flex flex-col pb-8">
+                <vpt-event>
+                  <vpt-badge-icon iconType='fas' iconName='building' iconColor='var(--tertiary-100)'
+                    backgroundColor='var(--accent-6-4)'></vpt-badge-icon>
+                  <vpt-event-text mainText='ViewPoint-LADWP' subText='111 N Hope St, Los Angeles, CA 90012'>
+                  </vpt-event-text>
+                </vpt-event>
+                <div class="text-tertiary-100 pl-20 -mt-4">Account Number : LS20000001.1</div>
+              </div>
+            </vpt-panel-header>
+            <vpt-panel-body>
+              <div class="">
+                <vpt-tab-group>
+                  <vpt-tab-item tabTitle="ViewPoint-Assessment Tool">
+
+                    <div class="sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl sm:mx-10 md:mx-10 lg:mx-20 2xl:mx-20 mt-20 mb-10">
+
+                      <div class="flex flex-row pt-2 pb-2 items-center">
+                        <span class="h-6 w-6 bg-tertiary-100 rounded-full"></span>
+                        <div class="px-1 ml-5 text-black font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl">ViewPoint-Assessment Tool</div>                        
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col ml-1">
+                        <span class="">Our ViewPoint Assessment tool is mobile friendly and has four main modules: Lead, Audit, Construction, Inspection. This tool focuses on field activities and uses the same customer and measure data within each module, so if one is updated it is reflected throughout. The key benefits of this tool include both offline and online capabilities, with API calls for customer eligibility and measure offerings. This syncs with ViewPoint’s main hub for additional tracking capabilities.</span>
+                        </div>
+                      </div>
+                      
+                      <div class="flex flex-row mt-10 pt-2 pb-2 items-center">
+                        <span class="h-6 w-6 bg-tertiary-100 rounded-full"></span>
+                        <!--<vpt-badge-icon iconType="fad" iconName="calendar-check" iconColor="var(--tertiary-100)"></vpt-badge-icon>-->
+                        <div class="px-1 ml-5 text-black font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl">Features you can see today</div>
+                      </div>
+
+                      <div class="flex flex-row mt-5 pt-2 pb-2 items-center">
+                        <span class="font-medium">Lead Mode</span>
+                        <div class="h-12 w-12 ml-4">
+                          <vpt-menu-icon type="fad" iconName="street-view"
+                            [properties]="{style: 'background-color: var(--accent-1-100); width: 3rem; height: 3rem'}"></vpt-menu-icon>
+                        </div> 
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col">
+                        <span class="">Track customer lead visits from initial interest in participating to collecting basic customer information and documenting notes/interactions with the customer.</span>
+                        </div>
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                          <div class="flex flex-col">
+                        <span class="">The lead mode of the assessment tool uses a site survey to assess if potential customers qualify for the program.</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col">
+                        <span class="">Main users of this mode will be Community Based Organizations (CBO) or Willdan’s Energy Service Representatives (ESR). Interested leads will be assigned to an ESR/Auditor who will schedule an assessment.</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col">
+                        <span class="">Calendar feature: Organize, plan, and track Events and Tasks. Never miss an appointment or deadline with Viewpoint Calendar.</span>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="flex flex-col items-center mb-10">
+                        <p class="text-tertiary-100 text-lg mb-5">Click below to get started</p>
+                      <button class="bg-white rounded w-1/4">
+                      <img class="rounded border border-tertiary-20 hover:border-secondary-100"  src="/assets/img/willdanl.png" alt=""></button>
+                    </div>
+
+
+                  </vpt-tab-item>
+                  <vpt-tab-item tabTitle="ViewPoint-Willdan">
+
+                    <div class="sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl sm:mx-10 md:mx-10 lg:mx-20 2xl:mx-20 mt-20 mb-16">
+
+                      <div class="flex flex-row pt-2 pb-2 items-center">
+                        <span class="h-6 w-6 bg-tertiary-100 rounded-full"></span>
+                        <!--<vpt-badge-icon iconType="fad" iconName="desktop" iconColor="var(--tertiary-100)"></vpt-badge-icon>-->
+                        <div class="px-1 ml-5 text-black font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl">ViewPoint-Willdan</div>
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col ml-1">
+                        <span class="">ViewPoint-Willdan is our program office module intended for Willdan office staff that gives full visibility into all aspects of the program. In ViewPoint-Willdan you can setup organizations and contractor profiles, create user roles, assign customers or tasks to users, see all the project data, and much more.</span>
+                        </div>
+                      </div>
+                      
+                      <div class="flex flex-row mt-10 pt-2 pb-2 items-center">
+                        <span class="h-6 w-6 bg-tertiary-100 rounded-full"></span>
+                        <!--<vpt-badge-icon iconType="fad" iconName="calendar-check" iconColor="var(--tertiary-100)"></vpt-badge-icon>-->
+                        <div class="px-1 ml-5 text-black font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl">Features you can see today</div>
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                        <div class="flex flex-col">
+                        <span class="">Customer search: query customers, prospects or projects through various filtering options. View business locations using the Interactive Mapping Feature and plot an efficient schedule for daily field activities.</span>
+                        </div>
+                      </div>
+
+                      <div class="flex flex-row items-center mt-5">
+                          <div class="flex flex-col">
+                        <span class="">Setup and manage external organizations / contractors and track licenses, insurance, trade/expertise, capacity, and other onboarding requirements. Includes ability to create and track access configuration for union auditors, installers, technicians, etc.</span>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="flex flex-col items-center mb-10">
+                        <p class="text-tertiary-100 text-lg mb-5">Click below to get started</p>
+                      <button class="bg-white rounded w-1/4">
+                      <img class="rounded border border-tertiary-20 hover:border-secondary-100"  src="/assets/img/willdanl.png" alt=""></button>
+                    </div>
+
+                    </vpt-tab-item>
+                  <vpt-tab-item tabTitle="Component Highlight">
+
+                    <div class="flex flex-row items-center sm:ml-2 md:ml-4 lg:ml-6 xl:ml-10 sm:mt-2 md:mt-4 lg:mt-6 xl:mt-10">
+                      <div class="h-12 w-12 my-4 sm:mx-1 md:mx-2 lg:mx-3 xl:mx-5">
+                        <vpt-menu-icon type="fad" iconName="table"
+                          [properties]="{style: 'background-color: var(--accent-3-100); width: 3rem; height: 3rem'}">
+                        </vpt-menu-icon>
+                      </div>
+                      <p class="sm:text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Component Highlight</p>
+                    </div>
+
+                    <div class="flex flex-row items-center sm:ml-2 md:ml-4 lg:ml-8 xl:ml-16 sm:mt-1 md:mt-2 lg:mt-4 xl:mt-6">
+                      <span class="h-4 w-4 bg-tertiary-100 rounded-full"></span>
+                      <div class="ml-3 px-1 sm:text-sm md:text-sm lg:text-base xl:text-lg 2xl:text-lg 3xl:text-2xl font-medium text-tertiary-100">The ViewPoint Table</div>
+                    </div>
+
+                    <div class="flex flex-row items-center sm:text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-base 3xl:text-base sm:mx-2 md:mx-4 lg:mx-8 xl:mx-16 sm:mt-1 md:mt-2 lg:mt-4 xl:mt-6 mt-5">
+                      <div class="flex flex-col">
+                      <span class="">With every update, we will be highlighting a new component of our Viewpoint design as well as its main features and benefits.  The highlight of this first release is our ViewPoint Table. Different than a regular table, this advance table features custom filtering, column sorting, searching, pagination, column reordering and responsive extension, among others.</span>
+                      <span class="mt-3">Try it out for yourself below!</span>
+                      </div>
+                    </div>
+
+                    <div class="sm:w-full md:w-full lg:w-11/12 xl:w-11/12 2xl:w-11/12 3xl:w-11/12 h-full flex flex-col sm:ml-2 md:ml-4 lg:ml-8 xl:ml-16 sm:mt-1 md:mt-4 lg:mt-6 xl:mt-10 rounded bg-white border border-border-100 overflow-hidden">
+                      <vpt-willdan-table [data]=CUSTOMER_DATA [columns]=displayedColumns [itemsPerPage]=8 [elipsesData]="elipsesData"></vpt-willdan-table>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                      <!--<div class="border-b border-border-100 rounded sm:mt-4 md:mt-6 lg:mt-10 xl:mt-12 mb-4 sm:w-full md:w-full lg:w-11/12 xl:w-11/12 2xl:w-11/12 3xl:w-11/12"></div>-->
+                      <div class="sm:mt-4 md:mt-6 lg:mt-10 xl:mt-12 sm:text-sm md:text-sm lg:text-base xl:text-lg 2xl:text-lg 3xl:text-2xl font-medium text-tertiary-100">Table Features</div>
+                    </div>
+                    
+                    <div class="sm:ml-2 md:ml-4 lg:ml-8 xl:ml-16 sm:mt-4 md:mt-6 lg:mt-8 xl:mt-8 mb-16 sm:w-full md:w-full lg:w-11/12 xl:w-11/12 2xl:w-11/12 3xl:w-11/12">
+                        <div class="">
+                          <div class="overflow-hidden rounded bg-white border border-border-100">
+                            <table class="w-full">
+                              <thead class="text-tertiary-100 border-b border-border-100">
+                                <tr>
+                                  <th class="w-3/12 text-left py-3 px-4 font-semibold text-sm">Function</th>
+                                  <th class="w-9/12 text-left py-3 px-4 font-semibold text-sm">Description</th>
+                                </tr>
+                              </thead>
+                            <tbody class="text-black sm:text-xs md:text-xs lg:text-sm xl:text-base">
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Column Sort</td>
+                                <td class="w-9/12 text-left py-3 px-4">Click on any column to sort content in ascending or descending order</td>
+                              </tr>
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Column Filters </td>
+                                <td class="w-9/12 text-left py-3 px-4">Apply 1 or more Column Filters per 1 or more Columns from the Result Set table.    Use the additional Filters to further hide the number of records not needed on the display.</td>
+                              </tr>
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Expand/Shrink Column View</td>
+                                <td class="w-9/12 text-left py-3 px-4">Drag left column border to the left or right which will widen or shrink column width.   Helpful in viewing truncated column values.</td>
+                              </tr>
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Rearrange Columns</td>
+                                <td class="w-9/12 text-left py-3 px-4">Horizontally drag columns (left or right) to move field(s) in preferred display order.</td>
+                              </tr>
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Ellipse (3 Vertical Dots) Submenu</td>
+                                <td class="w-9/12 text-left py-3 px-4">Click on the Ellipse Submenu at the end of each row to view additional Options.</td>
+                              </tr>
+                              <tr>
+                                <td class="w-3/12 text-left py-3 px-4">Page Display Navigation</td>
+                                <td class="w-9/12 text-left py-3 px-4">Double left/right arrows move display to 1st or Last page of results.  Single left/right arrow displays Next or Previous page display.</td>
+                              </tr>
+                            </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                      </div>
+
+                  </vpt-tab-item>                  
+                </vpt-tab-group>
+              </div>
+            </vpt-panel-body>
+          </vpt-panel>
+        </div>
+      </div>
+  </div>
+
+
+  <!--Update Section-->
+  <div class="mt-5 sm:mx-1 md:mx-2 lg:mx-2 xl:mx-8 2xl:mx-12 3xl:mx-16">
+
+    <!--Development-->
+    <div class="mt-16 bg-white border border-border-100 rounded overflow-hidden hover:border-secondary-100">
+      <vpt-panel>
+        <vpt-panel-header>
+
+          <div class="flex flex-row items-center">
+            <div class="h-12 w-12 my-4 mx-5">
+            <vpt-menu-icon type="fad" iconName="laptop"
+              [properties]="{style: 'background-color: var(--tertiary-100); width: 3rem; height: 3rem'}">
+            </vpt-menu-icon>
+            </div>
+            <div class="flex flex-row items-center">
+            <p class="sm:text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Development |</p>
+            <p class="sm:text-xs md:text-xs lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl xl:mt-2 2xl:mt-2 3xl:mt-2 sm:ml-2 md:ml-2 lg:ml-3 2xl:ml-3">ViewPoint modules currently in development</p>
+            </div>
+          </div>
+
+          <div class="pt-6 pr-5">
+            <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+            </fa-icon>
+          </div>
+
+        </vpt-panel-header>
+        <vpt-panel-body>
+          <div class="w-full h-full">
+
+            <div class="sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl sm:mx-10 md:mx-10 lg:mx-20 2xl:mx-20 my-5">
+
+              <div class="flex flex-row items-center">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Account Overview - an intuitive and detailed interface that displays a customer’s information with their associated audit(s), project(s), and workorder(s).</span>
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-5">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Audit UI - a module under ViewPoint’s Assessment tool for conducting energy audits by either internal or external auditors.</span>
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-5">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Contractor Pricing - a program admin ViewPoint interface to allow program management staff to setup, view and manage contractor pricing information.</span>
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-5">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Mobile Design – a scalable ViewPoint mobile user interface that adjusts automatically to the different mobile device sizes regardless of the operating system.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>        
+        </vpt-panel-body>
+        <vpt-panel-footer>        
+        </vpt-panel-footer>
+      </vpt-panel>
+    </div>
+
+    <!--Requirements-->
+    <div class="mt-16 bg-white border border-border-100 rounded overflow-hidden hover:border-secondary-100">
+    <vpt-panel>
+      <vpt-panel-header>
+
+        <div class="flex flex-row items-center">
+          <div class="h-12 w-12 my-4 mx-5">
+            <vpt-menu-icon type="fad" iconName="file-spreadsheet"
+              [properties]="{style: 'background-color: var(--tertiary-100); width: 3rem; height: 3rem'}">
+            </vpt-menu-icon>
+          </div>
+          <div class="flex flex-row items-center">
+          <p class="sm:text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Requirements |</p>
+          <p class="sm:text-xs md:text-xs lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl xl:mt-2 2xl:mt-2 3xl:mt-2 sm:ml-2 md:ml-2 lg:ml-3 2xl:ml-3">ViewPoint modules in the requirements analysis/verification phase</p>
+          </div>
+        </div>
+
+        <div class="pt-6 pr-5">
+          <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+          </fa-icon>
+        </div>
+
+      </vpt-panel-header>
+      <vpt-panel-body>
+        <div class="w-full h-full">
+
+
+          <div class="sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl sm:mx-10 md:mx-10 lg:mx-20 2xl:mx-20 my-5">
+
+            <div class="flex flex-row items-center">
+              <div class="flex flex-col">
+              <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+              </span>
+              </div>
+              <div class="flex flex-col ml-3">
+              <span class="ml-2">Construction UI - a module under ViewPoint’s Assessment tool to capture work performed by contractors such as installation scope of work, labor hours, material needs, and project completion forms (PCF).</span>
+              </div>
+            </div>
+            <div class="flex flex-row items-center mt-5">
+              <div class="flex flex-col">
+              <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+              </span>
+              </div>
+              <div class="flex flex-col ml-3">
+              <span class="ml-2">Labor Cost – an internal Willdan ViewPoint interface for managing all labor costs associated with a workorder.</span>
+              </div>
+            </div>
+            <div class="flex flex-row items-center mt-5">
+              <div class="flex flex-col">
+              <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+              </span>
+              </div>
+              <div class="flex flex-col ml-3">
+              <span class="ml-2">ESR Proposal – part of the Audit module under ViewPoint’s Assessment tool, it allows the user to generate proposals for customers based on the audit scope, with capabilities to add/remove line items from the scope and obtain signatures for work authorization and other sales’ required documents.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </vpt-panel-body>
+      <vpt-panel-footer>
+      </vpt-panel-footer>
+    </vpt-panel>
+    </div>
+
+    <!--On Deck--> 
+    <div class="mt-16 bg-white border border-border-100 rounded overflow-hidden hover:border-secondary-100">
+    <vpt-panel>
+      <vpt-panel-header>
+
+        <div class="flex flex-row items-center">
+          <div class="h-12 w-12 my-4 mx-5">
+            <vpt-menu-icon type="fad" iconName="server"
+              [properties]="{style: 'background-color: var(--tertiary-100); width: 3rem; height: 3rem'}">
+            </vpt-menu-icon>
+          </div>
+          <div class="flex flex-row items-center">
+          <p class="sm:text-xs md:text-sm lg:text-lg xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Modules on Deck |</p>
+          <p class="sm:text-xs md:text-xs lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl xl:mt-2 2xl:mt-2 3xl:mt-2 sm:ml-2 md:ml-2 lg:ml-3 2xl:ml-3">ViewPoint modules waiting to enter requirements queue</p>
+          </div>
+        </div>
+
+        <div class="pt-6 pr-5">
+          <fa-icon [icon]='["fas", "ellipsis-v"]' class='text-gray-400 fa-sm p-0 cursor-pointer hover:text-gray-700'>
+          </fa-icon>
+        </div>
+      </vpt-panel-header>
+      <vpt-panel-body>
+        <div class="w-full h-full">
+
+            <div class="sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl sm:mx-10 md:mx-10 lg:mx-20 2xl:mx-20 my-5">
+
+              <div class="flex flex-row items-center">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Inspection/QV – a module under ViewPoint’s Assessment tool for conducting inspections/quality assurance on installed energy projects by QA specialists.</span>
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-5">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Work Order – an intuitive and detailed interface that displays work order details details such as the installation scope of work, energy savings, labor cost, material cost, measure quantity, and related documentation.</span>
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-5">
+                <div class="flex flex-col">
+                <span class="h-4 w-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                  <span class="h-2 w-2 bg-secondary-20 rounded-full"></span>
+                </span>
+                </div>
+                <div class="flex flex-col ml-3">
+                <span class="ml-2">Safety – measure contractor performance based on key performance indicators such as safety practices, compliance to OSHA regulations, and safety training requirements.</span>
+                </div>
+              </div>
+
+            </div> 
+
+        </div>        
+      </vpt-panel-body>
+      <vpt-panel-footer>
+      </vpt-panel-footer>
+    </vpt-panel>
+    </div>
+
+</div>
+
+<!--Media Section-->
+<!-- <h1 class="mt-20 text-2xl">Media section (under development) </h1>
+<div class="mt-5 sm:mx-4 md:mx-6 lg:mx-12 xl:mx-16 2xl:mx-20 3xl:mx-24">
+  <div class="flex flex-row w-full h-full min-h-screen bg-white border border-border-100 rounded overflow-hidden">
+        <vpt-tab-group class="border-r border-border-100">
+          <vpt-tab-item tabTitle="Actions">
+            <vpt-accordion [properties]="{style: 'border-right: 0; border-top: 0'}">
+              <vpt-accordion-panel title="Stages">
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Steps"></vpt-accordion-panel>
+              <vpt-accordion-panel title="Documents">
+                <div class="text-right pt-4 pb-2">
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2 text-black font-medium">
+                  <div>File Name</div>
+                  <div>Date Added</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/G001 Viewpoint Beta Log In Issue.pdf')">Viewpoint Beta Log In Issue</div>
+                  <div>10/9/2020</div>
+                </div>
+                <div class="flex flex-row justify-between px-4 py-2">
+                  <div class="text-tertiary-100 cursor-pointer" (click)="onClickPdfDisplay('/assets/Content for ViewPoint – Beta.pdf')">Content for ViewPoint – Beta</div>
+                  <div>10/9/2020</div>
+                </div>
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Photos">
+                <div class="text-right pt-2">
+                  <fa-icon [icon]="['fas', 'minus-circle']" class="text-accent-6-2 w-full px-1"></fa-icon>
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="grid grid-cols-2 px-8 pb-4 justify-center">
+                  <img *ngFor="let item of documentItems" (click)="onClickImageDisplay(item)" [src]=item alt="image"
+                    class="col-span-1 h-30 w-40 rounded pt-2 pl-2 cursor-pointer">
+                </div>
+              </vpt-accordion-panel>
+              <vpt-accordion-panel title="Videos">
+                <div class="text-right pt-4">
+                  <fa-icon [icon]="['fas', 'minus-circle']" class="text-accent-6-2 w-full px-1"></fa-icon>
+                  <fa-icon [icon]="['fas', 'plus-circle']" class="text-secondary-100 w-full px-1"></fa-icon>
+                </div>
+                <div class="grid grid-cols-1 px-8 pb-4 justify-center">
+                  <div *ngFor="let item of videoItems">
+                  <img  (click)="onClickPlayVideo(item.source)" [src]=item.image alt="video"
+                    class="col-span-1 h-30 w-50 rounded pt-2 cursor-pointer">
+                      <div>
+                        <span class="text-lg font-bold text-gray-800 text-tertiary-100">{{item.headline}}</span>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-600">{{item.description}}</span>
+                      </div>
+                    </div>  
+                </div>
+              </vpt-accordion-panel>
+            </vpt-accordion>
+          </vpt-tab-item>
+        </vpt-tab-group>
+        <div class="w-full">
+          <vpt-panel>
+            <vpt-panel-body>
+
+            </vpt-panel-body>
+          </vpt-panel>
+        </div>
+      </div>
+  </div> -->
+
+  <!-- Media Modal -->
+  <vpt-styled-modal
+    [isModalOpen]="showModal"
+    (cancelHandler)="showModal = !showModal"
+    width="70%"
+  >
+    <div class="w-auto h-auto">
+      <img *ngIf="imageSource" 
+        [src]="imageSource"
+        [alt]="imageSource">                
+    </div>
+    <div class="h-full">
+      <ngx-extended-pdf-viewer *ngIf="pdfSource"
+        [src]="pdfSource" 
+        useBrowserLocale="true" 
+        height="70vh"
+        >
+      </ngx-extended-pdf-viewer>
+    </div>
+    <div> 
+      <video *ngIf="videoSource" 
+        width="100%"
+        controls 
+        oncanplay="this.muted=true" 
+        autoplay 
+        [src]="videoSource" 
+        type="video/mp4">
+      </video>              
+    </div>     
+  </vpt-styled-modal>
+
+</div>
+
+
+</body>
+
